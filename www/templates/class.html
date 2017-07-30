@@ -1,0 +1,22 @@
+<ion-view view-title="Class">
+   <ion-nav-buttons side="right">
+        <button class="button button-positive" ng-click="addClassModal({{$index}})"   ng-show="isTeacher">
+        Add Class
+        </button>
+    </ion-nav-buttons>
+  <ion-content>
+    <ion-list ng-controller="classCtrl" can-swipe="true">
+      <ion-item ng-repeat="item in class_details track by $index" class="item item-icon-left"  href="#/app/class/{{$index}}">
+               <i class="icon ion-chatbubble-working"></i>
+               <h2>{{item.class_name}}</h2>
+               <span ng-hide="isTeacher" class="badge badge-assertive">{{item.message_count}}</span>
+               <ion-option-button ng-show="isTeacher" class="button button-light" ng-click="deleteClass(item.class_id,$index)">
+                 <i class="icon ion-close-circled" style="color:red;"></i>
+               </ion-option-button>
+               <ion-option-button ng-show="isTeacher" class="button button-positive" ng-click="edit(item.class_name,item.class_id)">
+                 Edit
+               </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

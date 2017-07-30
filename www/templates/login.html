@@ -1,0 +1,40 @@
+<ion-view view-title="Login">
+  <ion-content>
+     <form>
+       <div class="list" ng-show="true">
+      <button  ng-click="teacherLogin = !teacherLogin" class="button button-block button-positive">
+        Teacher Login
+      </button>
+      <button  ng-click="studentLogin = !studentLogin" class="button button-block button-positive">
+        Student Login
+      </button>
+    </div>
+      <fieldset class="list" id="student" ng-show="studentLogin">
+        <label class="item item-input">
+          <span class="input-label">Student Adı</span>
+          <input type="text" ng-model="loginData.email">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Parola</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item">
+          <button class="button button-block button-balanced" ng-click="login('student')">Giriş Yap</button>
+        </label>
+      </fieldset>
+      <fieldset class="list" id="teacher" ng-show="teacherLogin">
+        <label class="item item-input">
+          <span class="input-label">Teacher Email</span>
+          <input type="text" ng-model="loginData.email">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Parola</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item">
+          <button class="button button-block button-balanced" ng-click="login('teacher')">Giriş Yap</button>
+        </label>
+      </fieldset>
+    </form>
+  </ion-content>
+</ion-view>

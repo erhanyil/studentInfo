@@ -1,0 +1,51 @@
+<ion-view view-title="Register">
+  <ion-content>
+    <h1>{{result}}</h1>
+		<div class="list" ng-show="registerSatus">
+			<button ng-click="openRegisterPage('teacher')" class="button button-block button-positive">
+				Teacher Register
+			</button>
+			<button ng-click="openRegisterPage('student')" class="button button-block button-positive">
+				Student Register
+			</button>
+		</div>
+		<div class="list" ng-show="studentRegister">
+			<label class="item item-input">
+				<input type="text" ng-model="studentRegisterData.firstName" placeholder="First Name">
+			</label>
+			<label class="item item-input">
+    		<input type="text" ng-model="studentRegisterData.lastName" placeholder="Last Name">
+  		</label>
+  		<label class="item item-input">
+				<input type="email" ng-model="studentRegisterData.email" placeholder="E-Mail">
+  		</label>
+			<label class="item item-input">
+				<input type="password" ng-model="studentRegisterData.pass" placeholder="Password">
+			</label>
+			<button ng-click="senddata('student')" class="button button-block button-balanced">
+  			Register
+			</button>
+		</div>
+		<div class="list" ng-show="teacherRegister">
+			<label class="item item-input">
+    		<input type="text" ng-model="teacherRegisterData.teacherCode" placeholder="Teacher Code">
+  		</label>
+			<label class="item item-input">
+    		<input type="text" ng-model="teacherRegisterData.firstName" placeholder="First Name">
+  		</label>
+			<label class="item item-input">
+    		<input type="text" ng-model="teacherRegisterData.lastName" placeholder="Last Name">
+  		</label>
+  		<label class="item item-input">
+    		<input type="email" ng-model="teacherRegisterData.email" placeholder="E-Mail">
+  		</label>
+			<label class="item item-input">
+				<input type="password" ng-model="teacherRegisterData.pass" placeholder="Password">
+			</label>
+			<button ng-click="senddata('teacher')" class="button button-block button-balanced">
+				Register
+			</button>
+	</div>
+		
+  </ion-content>
+</ion-view>
